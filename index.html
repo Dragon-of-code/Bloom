@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloom Our Youth | Christmas Giving & Foster Care in Fayetteville, GA</title>
+  <link href="https://googleapis.com" rel="stylesheet">
+  <style>
+    :root{--pine:#112e21;--pine2:#1b4733;--red:#b8292f;--crimson:#8a161c;--gold:#f2c14e;--cream:#fcfaf5;--muted:#536159;--border:#e4dfd3}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:#222925;line-height:1.6;border-top:6px solid var(--gold)}
+    h1,h2,h3{font-family:'Merriweather',serif;color:var(--pine)}
+    .snow-container{position:fixed;inset:0;pointer-events:none;z-index:999;overflow:hidden}.snow-container.hidden{opacity:0}
+    .snowflake{position:absolute;top:-15px;color:#fff;opacity:.8;animation:fall linear infinite}@keyframes fall{to{transform:translateY(105vh) rotate(360deg)}}
+    .banner{background:linear-gradient(90deg,var(--crimson),var(--red),var(--crimson));color:#fff;text-align:center;padding:.7rem 1rem;font-weight:700;font-size:.92rem;border-bottom:3px solid var(--gold)}
+    header{background:#0b2218;color:#fff;position:sticky;top:0;z-index:100;border-bottom:3px solid #c99326}
+    .nav{max-width:1140px;margin:auto;padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .logo{color:#fff;text-decoration:none;font-family:'Merriweather',serif;font-size:1.35rem;font-weight:700}.logo span{color:var(--gold)}
+    nav ul{list-style:none;display:flex;gap:1.3rem;align-items:center;flex-wrap:wrap}
+    nav a{color:#f4f1ea;text-decoration:none;font-weight:600;font-size:.92rem}nav a:hover{color:var(--gold)}
+    .snow-btn{background:rgba(242,193,78,.16);color:var(--gold);border:1px solid var(--gold);padding:.4rem .8rem;border-radius:6px;font-weight:700;cursor:pointer}
+    .nav-cta{background:var(--red);color:#fff!important;padding:.5rem 1.1rem;border-radius:6px}
+    .hero{background:linear-gradient(135deg,#112e21,#1b4733);color:#fff;padding:5rem 1.5rem;text-align:center;border-bottom:5px solid var(--gold)}
+    .badge{display:inline-block;background:rgba(242,193,78,.18);border:1px solid var(--gold);color:var(--gold);padding:.35rem 1rem;border-radius:99px;font-size:.82rem;font-weight:700;margin-bottom:1.2rem;text-transform:uppercase}
+    .hero h1{color:#fff;font-size:clamp(2rem,4vw,3.1rem);max-width:800px;margin:0 auto 1.2rem;line-height:1.2}
+    .hero p{max-width:670px;margin:0 auto 2rem;font-size:1.1rem;color:#e6ebe8}
+    .btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.6rem;border-radius:8px;font-weight:600;text-decoration:none;cursor:pointer;border:none;font-size:1rem;font-family:inherit}
+    .btn-red{background:var(--red);color:#fff}.btn-white{background:#fff;color:var(--pine)}
+    .btn-green{background:#eef6f1;color:var(--pine);border:1px solid #b9d4c4;padding:.55rem 1rem;font-size:.9rem}
+    .sec{max-width:1140px;margin:auto;padding:4rem 1.5rem}
+    .sec-head{text-align:center;max-width:720px;margin:0 auto 2.5rem}.sec-head h2{font-size:2rem;margin-bottom:.6rem}.sec-head p{color:var(--muted)}
+    .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+    .card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.8rem;box-shadow:0 4px 18px rgba(0,0,0,.04)}
+    .card h3{margin:.6rem 0}.card p{color:var(--muted);font-size:.95rem;margin-bottom:1rem}
+    .tag{font-size:.8rem;font-weight:700;color:var(--pine2);background:#e8f1ec;padding:.25rem .6rem;border-radius:4px}
+    .loc-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:1.8rem}
+    .loc-card{background:#fff;border:1px solid var(--border);border-left:5px solid var(--red);border-radius:12px;padding:1.4rem;margin-bottom:1.2rem}
+    .loc-card.alt{border-left-color:var(--pine2)}
+    .loc-addr{font-weight:700;color:var(--pine);margin:.3rem 0}.loc-meta{color:var(--muted);font-size:.92rem;margin-bottom:1rem}
+    .map-box{background:#fff;border:2px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-height:350px}
+    .map-top{background:var(--pine);color:#fff;padding:.7rem 1.2rem;font-weight:600;font-size:.9rem;display:flex;justify-content:space-between}.map-top span:last-child{color:var(--gold)}
+    .map-box iframe{width:100%;flex:1;min-height:310px;border:0}
+    .check-box{background:#fff;border:2px solid var(--border);border-radius:14px;padding:1.8rem}
+    .check-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.9rem;margin-bottom:1.5rem}
+    .check-item{display:flex;align-items:center;gap:.7rem;padding:.85rem;border:1px solid var(--border);border-radius:8px;cursor:pointer;background:#fcfbf9;font-weight:500}
+    .check-item.checked{background:#ebf5ef;border-color:var(--pine2)}
+    .check-foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1rem;border-top:1px solid var(--border)}
+    .contact-wrap{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;display:grid;grid-template-columns:1fr 1.15fr;box-shadow:0 8px 30px rgba(0,0,0,.07)}
+    .c-info{background:var(--pine);color:#fff;padding:2.5rem}.c-info h3{color:#fff;font-size:1.6rem;margin-bottom:.6rem}
+    .c-item{margin-top:1.3rem}.c-item strong{display:block;color:var(--gold);font-size:.85rem;text-transform:uppercase}.c-item a{color:#fff}
+    .c-form{padding:2.5rem}.fg{margin-bottom:1rem}.fg label{display:block;font-weight:600;font-size:.9rem;margin-bottom:.3rem;color:var(--pine)}
+    .fg input,.fg select,.fg textarea{width:100%;padding:.75rem;border:1px solid #cfc9bc;border-radius:8px;font-family:inherit}
+    .status{display:none;margin-top:1rem;padding:.9rem;border-radius:8px;background:#e6f4ec;color:var(--pine);border:1px solid #b7dec7;font-weight:500}
+    footer{background:#091b13;color:#c8d3cd;text-align:center;padding:2.2rem 1.5rem;font-size:.9rem;border-top:5px solid var(--gold)}footer a{color:var(--gold)}
+    @media(max-width:850px){.loc-grid,.contact-wrap{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="snow-container" id="snow"></div>
+  <div class="banner">🎄 Bring Christmas Joy to Georgia Foster Children — Sponsor an Angel Tree Gift or Donate Winter Essentials in Fayetteville!</div>
+  <header><div class="nav">
+    <a href="#" class="logo">🌲 Bloom <span>Our Youth</span></a>
+    <nav><ul>
+      <li><a href="#programs">Christmas Giving</a></li>
+      <li><a href="#location">Where to Find Bloom</a></li>
+      <li><a href="#checklist">Wish List</a></li>
+      <li><a href="#contact">Contact Bloom</a></li>
+      <li><button type="button" id="snowBtn" class="snow-btn">❄️ Snow: On</button></li>
+      <li><a href="https://bloomfosters.org" target="_blank" class="nav-cta">Official Site ↗</a></li>
+    </ul></nav>
+  </div></header>
+
+  <section class="hero">
+    <div class="badge">✨ Season of Hope • Fayetteville, Georgia</div>
+    <h1>Sharing Christmas Warmth with Children in Foster Care</h1>
+    <p>Headquartered on Marquis Drive in Fayetteville, GA, Bloom Our Youth protects, supports, and empowers foster children and families across Georgia. Join our community this Christmas to ensure every child feels remembered, valued, and celebrated.</p>
+    <div class="btns">
+      <a href="#contact" class="btn btn-red">🎁 Contact Bloom to Give</a>
+      <a href="#location" class="btn btn-white">📍 Find Our Fayetteville Campus</a>
+    </div>
+  </section>
+
+  <section class="sec" id="programs">
+    <div class="sec-head"><h2>How You Can Help This Christmas</h2><p>Your support directly serves foster youth in Fayette County and surrounding communities.</p></div>
+    <div class="grid3">
+      <div class="card"><div style="font-size:2rem">🎄</div><h3>Bloom's Christmas Angel Tree</h3><p>Sponsor a holiday gift for a child experiencing foster care. Unwrapped gifts labeled with the child's code can be dropped off at our Fayetteville headquarters.</p><span class="tag">Holiday Toy & Gift Drive</span></div>
+      <div class="card"><div style="font-size:2rem">🧥</div><h3>The Bloom Closet Winter Drive</h3><p>Located right next door at 115 Marquis Drive, The Bloom Closet provides free winter coats, warm clothes, shoes, and toys in a boutique setting.</p><span class="tag">115 Marquis Dr • Free Boutique</span></div>
+      <div class="card"><div style="font-size:2rem">🏡</div><h3>Become a Foster Family</h3><p>Give a child a safe, loving home for the holidays and beyond. Bloom provides training, certification, and ongoing support across Georgia.</p><span class="tag">Weekly Info Sessions</span></div>
+    </div>
+  </section>
+  <section class="sec" id="location">
+    <div class="sec-head"><h2>Where to Find Bloom in Fayetteville, GA</h2><p>Both of Bloom's buildings sit side by side on Marquis Drive—just off GA-85 (Glynn Street South) in Fayetteville, about 20 minutes southwest of Riverdale.</p></div>
+    <div class="loc-grid">
+      <div>
+        <div class="loc-card">
+          <h3>🎄 Main Office & Angel Tree Drop-Off</h3>
+          <div class="loc-addr">150 Marquis Drive, Fayetteville, GA 30214</div>
+          <p class="loc-meta"><strong>Hours:</strong> Mon–Fri, 8:30 AM – 5:00 PM<br><strong>Directions:</strong> Turn onto Marquis Drive off GA-85 South (near Grady Avenue). Look for Bloom Our Youth signage on your left.</p>
+          <a href="https://google.com" target="_blank" class="btn btn-green">🗺️ Open 150 Marquis Dr in Google Maps</a>
+        </div>
+        <div class="loc-card alt">
+          <h3>🛍️ The Bloom Closet & Donation Center</h3>
+          <div class="loc-addr">115 Marquis Drive, Fayetteville, GA 30214</div>
+          <p class="loc-meta"><strong>Hours:</strong> Tue–Sat, 9:00 AM – 5:00 PM<br><strong>What Goes Here:</strong> Clothing donations, winter coats, shoes, new toys, and volunteer check-ins across from the main building.</p>
+          <a href="https://google.com" target="_blank" class="btn btn-green">🗺️ Open 115 Marquis Dr in Google Maps</a>
+        </div>
+      </div>
+      <div class="map-box">
+        <div class="map-top"><span>📍 Fayetteville Campus Map</span><span>Marquis Dr, Fayetteville, GA 30214</span></div>
+        <iframe title="Bloom Map" src="https://google.com" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="checklist">
+    <div class="sec-head"><h2>Interactive Christmas Donation Checklist</h2><p>Check off items you plan to bring to Bloom's Fayetteville campus to add them to your contact message below.</p></div>
+    <div class="check-box">
+      <div class="check-grid" id="list">
+        <label class="check-item"><input type="checkbox" value="New Winter Coat (Youth Sizes)"> 🧥 New Winter Coat (Youth Sizes)</label>
+        <label class="check-item"><input type="checkbox" value="Unwrapped Angel Tree Toy / Game"> 🧸 Unwrapped Angel Tree Toy / Game</label>
+        <label class="check-item"><input type="checkbox" value="Warm Pajamas & Socks"> 🧦 Warm Pajamas & Socks</label>
+        <label class="check-item"><input type="checkbox" value="Teen Gift Cards ($25–$50)"> 💳 Teen Gift Cards ($25–$50)</label>
+        <label class="check-item"><input type="checkbox" value="Children's Books & Art Supplies"> 📚 Children's Books & Art Supplies</label>
+        <label class="check-item"><input type="checkbox" value="New Sneakers or Winter Boots"> 👟 New Sneakers or Winter Boots</label>
+      </div>
+      <div class="check-foot">
+        <strong id="countTxt">0 items selected for donation</strong>
+        <button type="button" id="applyBtn" class="btn btn-red" style="padding:.6rem 1.2rem;font-size:.9rem">Add Selected Items to Inquiry ↓</button>
+      </div>
+    </div>
+  </section>
+  <section class="sec" id="location">
+    <div class="sec-head"><h2>Where to Find Bloom in Fayetteville, GA</h2><p>Both of Bloom's buildings sit side by side on Marquis Drive—just off GA-85 (Glynn Street South) in Fayetteville, about 20 minutes southwest of Riverdale.</p></div>
+    <div class="loc-grid">
+      <div>
+        <div class="loc-card">
+          <h3>🎄 Main Office & Angel Tree Drop-Off</h3>
+          <div class="loc-addr">150 Marquis Drive, Fayetteville, GA 30214</div>
+          <p class="loc-meta"><strong>Hours:</strong> Mon–Fri, 8:30 AM – 5:00 PM<br><strong>Directions:</strong> Turn onto Marquis Drive off GA-85 South (near Grady Avenue). Look for Bloom Our Youth signage on your left.</p>
+          <a href="https://google.com" target="_blank" class="btn btn-green">🗺️ Open 150 Marquis Dr in Google Maps</a>
+        </div>
+        <div class="loc-card alt">
+          <h3>🛍️ The Bloom Closet & Donation Center</h3>
+          <div class="loc-addr">115 Marquis Drive, Fayetteville, GA 30214</div>
+          <p class="loc-meta"><strong>Hours:</strong> Tue–Sat, 9:00 AM – 5:00 PM<br><strong>What Goes Here:</strong> Clothing donations, winter coats, shoes, new toys, and volunteer check-ins across from the main building.</p>
+          <a href="https://google.com" target="_blank" class="btn btn-green">🗺️ Open 115 Marquis Dr in Google Maps</a>
+        </div>
+      </div>
+      <div class="map-box">
+        <div class="map-top"><span>📍 Fayetteville Campus Map</span><span>Marquis Dr, Fayetteville, GA 30214</span></div>
+        <iframe title="Bloom Map" src="https://google.com" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="checklist">
+    <div class="sec-head"><h2>Interactive Christmas Donation Checklist</h2><p>Check off items you plan to bring to Bloom's Fayetteville campus to add them to your contact message below.</p></div>
+    <div class="check-box">
+      <div class="check-grid" id="list">
+        <label class="check-item"><input type="checkbox" value="New Winter Coat (Youth Sizes)"> 🧥 New Winter Coat (Youth Sizes)</label>
+        <label class="check-item"><input type="checkbox" value="Unwrapped Angel Tree Toy / Game"> 🧸 Unwrapped Angel Tree Toy / Game</label>
+        <label class="check-item"><input type="checkbox" value="Warm Pajamas & Socks"> 🧦 Warm Pajamas & Socks</label>
+        <label class="check-item"><input type="checkbox" value="Teen Gift Cards ($25–$50)"> 💳 Teen Gift Cards ($25–$50)</label>
+        <label class="check-item"><input type="checkbox" value="Children's Books & Art Supplies"> 📚 Children's Books & Art Supplies</label>
+        <label class="check-item"><input type="checkbox" value="New Sneakers or Winter Boots"> 👟 New Sneakers or Winter Boots</label>
+      </div>
+      <div class="check-foot">
+        <strong id="countTxt">0 items selected for donation</strong>
+        <button type="button" id="applyBtn" class="btn btn-red" style="padding:.6rem 1.2rem;font-size:.9rem">Add Selected Items to Inquiry ↓</button>
+      </div>
+    </div>
+  </section>
